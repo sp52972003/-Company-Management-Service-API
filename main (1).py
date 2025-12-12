@@ -10,7 +10,7 @@ from passlib.context import CryptContext
 from bson import ObjectId
 
 
-#  CONFIGURATION MANAGEMENT 
+# CONFIGURATION MANAGEMENT 
 class Settings:
     """Application settings loaded from environment variables"""
     DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb://localhost:27017")

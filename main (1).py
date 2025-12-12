@@ -10,7 +10,7 @@ from passlib.context import CryptContext
 from bson import ObjectId
 
 
-# ==================== CONFIGURATION MANAGEMENT ====================
+#  CONFIGURATION MANAGEMENT 
 class Settings:
     """Application settings loaded from environment variables"""
     DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb://localhost:27017")
@@ -23,7 +23,7 @@ class Settings:
 settings = Settings()
 
 
-# ==================== DATABASE INITIALIZATION ====================
+# DATABASE INITIALIZATION 
 class MongoDBConnection:
     """Handles MongoDB connection and database access"""
     
@@ -51,7 +51,7 @@ class MongoDBConnection:
 mongo_db = MongoDBConnection(settings.DATABASE_URL, settings.DATABASE_NAME)
 
 
-# ==================== PYDANTIC VALIDATION MODELS ====================
+#  PYDANTIC VALIDATION MODELS 
 class CompanyCreationInput(BaseModel):
     """Input validation for company creation"""
     company_name: str = Field(..., min_length=3, max_length=100)
@@ -89,7 +89,7 @@ class CompanyDetailResponse(BaseModel):
         from_attributes = True
 
 
-# ==================== SECURITY UTILITIES ====================
+# SECURITY UTILITIES 
 class CryptoService:
     """Handles password encryption and decryption"""
     
@@ -140,7 +140,7 @@ jwt_service = JWTService(
 )
 
 
-# ==================== UTILITY FUNCTIONS ====================
+# UTILITY FUNCTIONS
 def create_company_slug(company_name: str) -> str:
     """
     Convert company name to URL-safe slug.
@@ -165,7 +165,7 @@ def generate_storage_collection_name(slug: str) -> str:
     return f"storage_{slug.replace('-', '_')}"
 
 
-# ==================== DATA ACCESS LAYER ====================
+# DATA ACCESS LAYER 
 class AdminDataHandler:
     """Handles all admin-related database operations"""
     
@@ -274,7 +274,7 @@ company_handler = CompanyDataHandler(mongo_db.db)
 storage_manager = DataStorageManager(mongo_db.db)
 
 
-# ==================== BUSINESS LOGIC LAYER ====================
+#  BUSINESS LOGIC LAYER 
 class AuthenticationLogic:
     """Handles authentication operations"""
     
@@ -484,7 +484,7 @@ auth_logic = AuthenticationLogic(admin_handler, company_handler)
 company_logic = CompanyManagementLogic(admin_handler, company_handler, storage_manager)
 
 
-# ==================== DEPENDENCY INJECTION ====================
+#  DEPENDENCY INJECTION 
 async def extract_current_admin(authorization: str = Header(None)) -> Dict[str, Any]:
     """
     Extract and validate admin from JWT token in Authorization header.
@@ -508,7 +508,7 @@ async def extract_current_admin(authorization: str = Header(None)) -> Dict[str, 
         )
 
 
-# ==================== FASTAPI APPLICATION ====================
+# FASTAPI APPLICATION 
 app = FastAPI(
     title="Company Management Service",
     description="Multi-tenant company management API with JWT authentication",
@@ -528,7 +528,7 @@ async def shutdown_event():
     await mongo_db.disconnect()
 
 
-# ==================== API ENDPOINTS ====================
+#  API ENDPOINTS 
 
 @app.post("/company/register", response_model=CompanyDetailResponse)
 async def register_company(payload: CompanyCreationInput):

@@ -2,7 +2,7 @@
 
 A comprehensive backend solution for managing multi-tenant companies with secure authentication and isolated data storage using MongoDB.
 
-## 📋 Project Overview
+##  Project Overview
 
 This service provides complete company management capabilities:
 - **Company Registration & Management**: Create, retrieve, update, and delete companies
@@ -11,7 +11,7 @@ This service provides complete company management capabilities:
 - **Data Storage**: Dynamic MongoDB collections per company
 - **Security**: Bcrypt encryption, JWT tokens, role-based access control
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 ┌────────────────────────────────────────────────┐
@@ -62,7 +62,7 @@ This service provides complete company management capabilities:
 └────────────────────────────────────────────────┘
 ```
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 - **Framework**: FastAPI (modern async Python web framework)
 - **Server**: Uvicorn (ASGI server)
@@ -72,7 +72,7 @@ This service provides complete company management capabilities:
 - **Password Security**: Bcrypt (adaptive hashing)
 - **Data Validation**: Pydantic (type-safe validation)
 
-## 📦 Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Python 3.9 or higher
@@ -132,7 +132,7 @@ uvicorn main:app --reload --host 0.0.0.0 --port 8000
 - Alternative documentation: http://localhost:8000/redoc
 - Health check: http://localhost:8000/health
 
-## 🔑 Configuration
+##  Configuration
 
 Create `.env` file in project root:
 
@@ -150,7 +150,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=120
 LOG_LEVEL=INFO
 ```
 
-## 📚 API Endpoints
+##  API Endpoints
 
 ### 1. Register Company
 **POST** `/company/register`
@@ -320,7 +320,7 @@ Simple endpoint to verify API is running.
 
 ---
 
-## 🔐 Authentication Flow
+##  Authentication Flow
 
 ### Getting Started with JWT
 
@@ -366,7 +366,7 @@ Each token contains:
 
 ---
 
-## 📊 Data Models
+##  Data Models
 
 ### Admin User Document
 ```javascript
@@ -407,7 +407,7 @@ Each token contains:
 
 ---
 
-## 🏛️ Architectural Design Decisions
+##  Architectural Design Decisions
 
 ### Decision 1: Dynamic Collections per Company
 
@@ -472,12 +472,12 @@ Each token contains:
 
 ---
 
-## 🚀 Scalability
+##  Scalability
 
 ### Current Capacity
-- ✅ 100+ concurrent requests
-- ✅ 10,000+ companies
-- ✅ Sub-second response times
+-  100+ concurrent requests
+-  10,000+ companies
+-  Sub-second response times
 
 ### Future Scaling Strategies
 
@@ -503,7 +503,7 @@ Shared MongoDB Cluster
 
 ---
 
-## 🧪 Testing the API
+##  Testing the API
 
 ### Using cURL
 
@@ -572,7 +572,7 @@ print(response.json())
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 company-management-service/
@@ -587,7 +587,7 @@ company-management-service/
 
 ---
 
-## 🔍 Error Handling
+##  Error Handling
 
 The API returns appropriate HTTP status codes:
 - `200 OK`: Successful GET, PUT requests
@@ -603,20 +603,19 @@ All responses include descriptive error messages.
 
 ---
 
-## 🔐 Security Features
+##  Security Features
 
-✅ Bcrypt password hashing with salt
-✅ JWT token-based authentication
-✅ Authorization verification
-✅ Input validation with Pydantic
-✅ SQL injection prevention (using PyMongo)
-✅ Environment variable for secrets
-✅ HTTPS-ready configuration
-✅ Proper HTTP status codes
+ Bcrypt password hashing with salt
+ JWT token-based authentication
+ Authorization verification
+ Input validation with Pydantic
+ SQL injection prevention (using PyMongo)
+ Environment variable for secrets HTTPS-ready configuration
+ Proper HTTP status codes
 
 ---
 
-## 📈 Monitoring Recommendations
+##  Monitoring Recommendations
 
 ### Metrics to Track
 - API response times per endpoint
@@ -634,7 +633,7 @@ All responses include descriptive error messages.
 
 ---
 
-## 🎓 Key Concepts Implemented
+##  Key Concepts Implemented
 
 1. **Multi-Tenant Architecture**: Data isolation per company
 2. **JWT Authentication**: Stateless token-based auth
@@ -647,7 +646,7 @@ All responses include descriptive error messages.
 
 ---
 
-## 🚀 Deployment
+##  Deployment
 
 ### Docker Deployment (Recommended)
 
@@ -674,7 +673,7 @@ git push heroku main
 
 ---
 
-## 📞 Support & Troubleshooting
+##  Support & Troubleshooting
 
 **MongoDB Connection Error**
 - Ensure MongoDB is running: `mongod`
@@ -692,17 +691,15 @@ git push heroku main
 
 ---
 
-## 📄 License
+##  License
 
 MIT License - Use freely for educational and commercial purposes
 
-## 👨‍💻 Version Info
+##  Version Info
 
 - **API Version**: 2.0.0
 - **Python**: 3.9+
 - **Status**: Production Ready
 - **Last Updated**: December 2024
 
----
 
-**Ready to deploy? You're all set! 🚀**

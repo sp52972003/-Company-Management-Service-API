@@ -1,0 +1,63 @@
+# Python Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Environment Files
+.env
+.env.local
+.env.*.local
+.env.prod
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+*.mongo
+
+# Logs
+logs/
+*.log
+log.txt
+
+# OS Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Project Specific
+instance/
+.webassets-cache
+*.egg-info/
+dist/
+build/
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp
+.temp/
